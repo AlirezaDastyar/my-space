@@ -1,0 +1,22 @@
+<footer class="footer">
+    <div class="license" onclick="show('license-message')">
+        License
+        <i class="fab fa-creative-commons"></i>
+        <i class="fab fa-creative-commons-by"></i>
+        <i class="fab fa-creative-commons-sa"></i>
+    </div>
+    <div class="popup" id="license-message">
+        <span class="overlay" onclick="hide('license-message')"></span>
+        <div class="popup-container">
+            <span class="close-button" onclick="hide('license-message')">&times;</span>
+            <p>
+                <span>All the contents are published under</span>
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons License BY-SA 4.0</a>
+                <span>unless otherwise specified.</span>
+            </p>
+        </div>
+    </div>
+</footer>
+
+{{ $main_js := resources.Get "js/main.js" | minify }}
+<script src="{{ $main_js.Permalink  }}"></script>

@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{ $fullURL := .Permalink }}
+{{ $slug := printf "%s%s" .Slug "/" }}
+{{ $categoryURL := strings.Replace $fullURL $slug "" }}
+<article class="w-100">
+    <h1>{{.Title}}</h1>
+    <div class="meta-box">
+        <div>
+            <a href="{{ $categoryURL }}">{{ .Params.category }}</a>
+            <span>{{ .Date.Format "Jan 01, 2006" }}</span>
+        </div>
+        <div class="tags-container">
+            {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }}
+            <ul class="tags">
+                {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
+                $taxonomy $tag) -}}
+                <li class="tag">
+                    <a href="{{ .Permalink }}">#{{ $tag | urlize }}</a>
+                </li>
+                {{- end -}} {{- end -}}
+            </ul>
+            {{ end }}
+        </div>
+    </div>
+    <img class="cover-img" src="{{.Page.Params.cover.image}}" alt="{{.Page.Params.cover.alt}}" />
+    {{ .Content }}
+</article>
+{{ end }}

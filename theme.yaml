@@ -1,0 +1,22 @@
+ame: My Space
+license: MIT
+licenselink: https://github.com/AlirezaDastyar/my-space/blob/master/LICENSE
+description: A clean, minimal, blog theme
+
+homepage: https://github.com/AlirezaDastyar/my-space
+
+min_version: 0.125.7
+
+tags:
+    - minimal
+    - blog
+    - personal
+
+features:
+    - dark-mode
+    - social-icons
+    - custom-category
+
+author:
+    name: Alireza Dastyar
+    homepage: https://alireza.dastyar.space/

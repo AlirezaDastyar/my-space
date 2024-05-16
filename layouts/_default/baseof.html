@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ partial "meta.html" . }}
+</head>
+<body class="body h-100v m-auto font-ubuntu dark" id="body">
+    <div class="col-flex-container h-100 ms-20">
+        {{ partial "header.html" . }}
+        {{ block "main" . }}{{ end }}
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+</html>
