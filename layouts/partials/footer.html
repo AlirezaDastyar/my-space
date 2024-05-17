@@ -19,4 +19,4 @@
 </footer>
 
 {{ $main_js := resources.Get "js/main.js" | minify }}
-<script src="{{ $main_js.Permalink  }}"></script>
+<script src="{{ $main_js.RelPermalink  }}"></script>
