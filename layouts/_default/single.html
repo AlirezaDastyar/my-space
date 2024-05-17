@@ -22,7 +22,7 @@
             {{ end }}
         </div>
     </div>
-    <img class="cover-img" src="{{.Page.Params.cover.image}}" alt="{{.Page.Params.cover.alt}}" />
+    <img class="cover-img" src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" />
     {{ .Content }}
 </article>
 {{ end }}
