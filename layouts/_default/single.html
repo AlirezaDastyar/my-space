@@ -6,7 +6,7 @@
     <h1>{{.Title}}</h1>
     <div class="meta-box">
         <div>
-            <a href="{{ $categoryURL }}">{{ .Params.category }}</a>
+            <a href="{{ $categoryURL }}" title="{{ .Params.category }}" aria-label="{{ .Params.category }}" >{{ .Params.category }}</a>
             <span>{{ .Date.Format "Jan 01, 2006" }}</span>
         </div>
         <div class="tags-container">
@@ -15,7 +15,7 @@
                 {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
                 $taxonomy $tag) -}}
                 <li class="tag">
-                    <a href="{{ .RelPermalink }}">#{{ $tag | urlize }}</a>
+                    <a href="{{ .RelPermalink }}" title="{{ $tag }}" aria-label="{{ $tag }}" >#{{ $tag | urlize }}</a>
                 </li>
                 {{- end -}} {{- end -}}
             </ul>

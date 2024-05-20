@@ -9,13 +9,15 @@
 {{ $main_css := resources.Get "css/main.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
 {{ $syntax_dark_css := resources.Get "css/syntax_dark.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
 {{ $syntax_light_css := resources.Get "css/syntax_light.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
+{{ $main_js := resources.Get "js/main.js" | minify }}
 <meta charset="UTF-8">
 <link rel="icon" href="/img/favicon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="keywords" content="{{ delimit .Keywords ", " ", " }}" />
 <meta name="description" content="{{ $desc }}">
 <title>{{ $title }}</title>
-<link rel="preload stylesheet" as="style" href="{{ $syntax_dark_css.RelPermalink  }}" integrity="{{ $syntax_dark_css.Data.Integrity }}" />
-<link rel="preload stylesheet" as="style" href="{{ $syntax_light_css.RelPermalink  }}" integrity="{{ $syntax_light_css.Data.Integrity }}" />
-<link rel="preload stylesheet" as="style" href="{{ $main_css.RelPermalink  }}" integrity="{{ $main_css.Data.Integrity }}" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="{{ $main_css.RelPermalink  }}" integrity="{{ $main_css.Data.Integrity }}" />
+<link rel="preload" as="style" href="{{ $syntax_dark_css.RelPermalink  }}" integrity="{{ $syntax_dark_css.Data.Integrity }}" />
+<link rel="preload" as="style" href="{{ $syntax_light_css.RelPermalink  }}" integrity="{{ $syntax_light_css.Data.Integrity }}" />
+<link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<script src="{{ $main_js.RelPermalink  }}" defer></script>

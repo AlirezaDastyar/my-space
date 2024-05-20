@@ -7,11 +7,11 @@
         <div class="col-flex-container h-100">
             {{ partial "header.html" . }}
             <section class="flex-1 mv-150 ms-20">
-                <img class="avatar" src="{{ .Site.Params.author.avatar }}" alt="{{.Site.Params.author.name}}">
+                <img class="avatar" width="150" height="150" src="{{ .Site.Params.author.avatar }}" alt="{{.Site.Params.author.name}}" title="{{.Site.Params.author.name}}">
                 <h2 class="intro">{{.Site.Params.intro}}</h2>
                 <div class="contacts">
                 {{ range.Site.Params.author.contacts }}
-                    <a class="contact-item" href="{{.link}}"><i class="{{.icon}}"></i></a>
+                    <a class="contact-item" href="{{.link}}" title="{{ .name }} link" aria-label="{{ .name }}" ><i class="{{.icon}}"></i></a>
                 {{ end }}
                 </div>
             </section>

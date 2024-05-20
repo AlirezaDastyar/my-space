@@ -6,7 +6,7 @@
             {{ $paginator := .Paginate .Pages }}
             {{ range $paginator.Pages }}
             <li class="blog-entry">
-                <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+                <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle }}</a>
                 <span>{{ .Date.Format "January 2006" }}</span>
             </li>
             {{ end }}
