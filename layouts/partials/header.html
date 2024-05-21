@@ -1,20 +1,20 @@
 <header class="header flex-container">
     <span></span>
-    {{ with site.Menus.main }}
+    {{- with site.Menus.main }}
     <nav class="menu font-roboto">
         <ul class="nav">
-            {{ range . }}
+            {{- range . }}
             <li class="nav-item">
-                {{ if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+                {{- if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
                 <a class="active" aria-current="page" href="{{ .URL }}">{{ .Name }}</a>
-                {{ else }}
+                {{- else }}
                 <a href="{{ .URL }}">{{ .Name }}</a>
-                {{ end }}
+                {{- end }}
             </li>
-            {{ end }}
+            {{- end }}
         </ul>
     </nav>
-    {{ end }}
+    {{- end }}
     <div class="dark-mode">
         <span class="moon toggle" id="moon" onclick="darkMode(true)">
             <i class="fa-solid fa-moon"></i>

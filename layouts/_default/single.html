@@ -1,7 +1,7 @@
-{{ define "main" }}
-{{ $fullURL := .RelPermalink }}
-{{ $slug := printf "%s%s" .Slug "/" }}
-{{ $categoryURL := strings.Replace $fullURL $slug "" }}
+{{- define "main" }}
+{{- $fullURL := .RelPermalink }}
+{{- $slug := printf "%s%s" .Slug "/" }}
+{{- $categoryURL := strings.Replace $fullURL $slug "" }}
 <article class="w-100">
     <h1>{{.Title}}</h1>
     <div class="meta-box">
@@ -10,19 +10,20 @@
             <span>{{ .Date.Format "Jan 01, 2006" }}</span>
         </div>
         <div class="tags-container">
-            {{ $taxonomy := "tags" }} {{ with .Param $taxonomy }}
+            {{- $taxonomy := "tags" }} 
+            {{- with .Param $taxonomy }}
             <ul class="tags">
-                {{ range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s"
-                $taxonomy $tag) -}}
+                {{- range $index, $tag := . }} {{ with $.Site.GetPage (printf "/%s/%s" $taxonomy $tag) }}
                 <li class="tag">
                     <a href="{{ .RelPermalink }}" title="{{ $tag }}" aria-label="{{ $tag }}" >#{{ $tag | urlize }}</a>
                 </li>
-                {{- end -}} {{- end -}}
+                {{- end }} 
+            {{- end }}
             </ul>
-            {{ end }}
+            {{- end }}
         </div>
     </div>
     <img class="cover-img" src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" />
     {{ .Content }}
 </article>
-{{ end }}
+{{- end }}

@@ -10,9 +10,9 @@
                 <img class="avatar" width="150" height="150" src="/{{ .Site.Params.author.avatar }}" alt="{{.Site.Params.author.name}}" title="{{.Site.Params.author.name}}">
                 <h2 class="intro">{{.Site.Params.intro}}</h2>
                 <div class="contacts">
-                {{ range.Site.Params.author.contacts }}
+                {{- range.Site.Params.author.contacts }}
                     <a class="contact-item" href="{{.link}}" title="{{ .name }} link" aria-label="{{ .name }}" ><i class="{{.icon}}"></i></a>
-                {{ end }}
+                {{- end }}
                 </div>
             </section>
             {{ partial "footer.html" . }}

@@ -1,15 +1,15 @@
-{{ $title := .Page.Title }}
-{{ $desc := .Page.Description }}
-{{ $keywords := .Keywords }}
-{{ if .IsHome }}
-{{ $title = .Site.Params.title }}
-{{ $desc = .Site.Params.description }}
-{{ $keywords = .Site.Params.Keywords }}
-{{ end }}
-{{ $main_css := resources.Get "css/main.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
-{{ $syntax_dark_css := resources.Get "css/syntax_dark.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
-{{ $syntax_light_css := resources.Get "css/syntax_light.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
-{{ $main_js := resources.Get "js/main.js" | minify }}
+{{- $title := .Page.Title }}
+{{- $desc := .Page.Description }}
+{{- $keywords := .Keywords }}
+{{- if .IsHome }}
+{{- $title = .Site.Params.title }}
+{{- $desc = .Site.Params.description }}
+{{- $keywords = .Site.Params.Keywords }}
+{{- end }}
+{{- $main_css := resources.Get "css/main.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
+{{- $syntax_dark_css := resources.Get "css/syntax_dark.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
+{{- $syntax_light_css := resources.Get "css/syntax_light.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
+{{- $main_js := resources.Get "js/main.js" | minify }}
 <meta charset="UTF-8">
 <link rel="icon" href="/img/favicon.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,11 @@
 <meta name="description" content="{{ $desc }}">
 <title>{{ $title }}</title>
 <link rel="stylesheet" href="{{ $main_css.RelPermalink  }}" integrity="{{ $main_css.Data.Integrity }}" />
-<link rel="stylesheet" href="{{ $syntax_dark_css.RelPermalink  }}" integrity="{{ $syntax_dark_css.Data.Integrity }}" />
-<link rel="stylesheet" href="{{ $syntax_light_css.RelPermalink  }}" integrity="{{ $syntax_light_css.Data.Integrity }}" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<link rel="preload" href="{{ $syntax_dark_css.RelPermalink  }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $syntax_dark_css.RelPermalink  }}" integrity="{{ $syntax_dark_css.Data.Integrity }}"></noscript>
+<link rel="preload" href="{{ $syntax_light_css.RelPermalink  }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet"  href="{{ $syntax_light_css.RelPermalink  }}" integrity="{{ $syntax_light_css.Data.Integrity }}"></noscript>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" ></noscript>
+
 <script src="{{ $main_js.RelPermalink  }}" defer></script>
