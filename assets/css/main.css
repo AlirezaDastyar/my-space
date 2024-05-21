@@ -37,6 +37,11 @@ a {
     margin-bottom: 150px;
 }
 
+.mv-230 {
+    margin-top: 230px;
+    margin-bottom: 230px;
+}
+
 .ms-20 {
     margin-left: 20px;
     margin-right: 20px;
@@ -330,10 +335,12 @@ blockquote {
     margin: 0 2px;
     border-radius: 5px;
 }
+
 .tags-container {
     display: flex;
     justify-content: end;
 }
+
 .tags {
     list-style: none;
     display: flex;
@@ -342,10 +349,22 @@ blockquote {
     font-size: 14px;
 }
 
-.tag a{
+.tag a {
     color: #1d1e1fab;
 }
 
-.dark .tag a{
+.dark .tag a {
     color: #ebfaffab;
+}
+
+.message-404 {
+    font-size: 24px;
+    color: #000;
+    border: 1px solid #93939394;
+    padding: 50px 70px;
+}
+
+.dark .message-404 {
+    color: white;
+    border-color: #a6a6a65c;
 }
