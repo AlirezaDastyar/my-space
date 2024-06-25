@@ -2,13 +2,16 @@
 {{- $fullURL := .RelPermalink }}
 {{- $slug := printf "%s%s" .Slug "/" }}
 {{- $categoryURL := strings.Replace $fullURL $slug "" }}
-<article class="w-100">
+<article class="w-100 article">
     <h1>{{.Title}}</h1>
     <div class="meta-box">
         <div>
             <a href="{{ $categoryURL }}" title="{{ .Params.category }}" aria-label="{{ .Params.category }}" >{{ .Params.category }}</a>
             <span>{{ .Date.Format "Jan 01, 2006" }}</span>
         </div>
+    </div>
+    <img class="cover-img" src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" />
+    <div class="meta-box">
         <div class="tags-container">
             {{- $taxonomy := "tags" }} 
             {{- with .Param $taxonomy }}
@@ -23,7 +26,6 @@
             {{- end }}
         </div>
     </div>
-    <img class="cover-img" src="{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" />
     {{ .Content }}
 </article>
 {{- end }}

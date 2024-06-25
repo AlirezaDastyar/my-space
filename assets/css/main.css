@@ -59,7 +59,7 @@ a {
 }
 
 .highlight {
-    font-size: 16px;
+    font-size: 12px;
     overflow: auto;
     border-radius: 15px;
 }
@@ -70,8 +70,8 @@ a {
 
 .font-ubuntu {
     font-family: "ubuntu";
-    font-size: 18px;
-    line-height: 32px;
+    font-size: 14px;
+    line-height: 24px;
 }
 
 .font-roboto {
@@ -82,7 +82,6 @@ a {
 
 .body {
     max-width: 1150px;
-
 }
 
 .dark.body {
@@ -105,11 +104,12 @@ a {
     margin: 0;
     padding: 0;
     line-height: 16px;
+    font-size: 14px;
 }
 
 .nav-item {
     display: inline;
-    margin: 0 50px;
+    margin: 0 25px;
 }
 
 .nav-item a {
@@ -132,17 +132,18 @@ a {
 
 .dark-mode {
     position: absolute;
-    font-size: 16px;
+    font-size: 14px;
     right: 0;
     margin-right: 20px;
 }
 
 .dark-mode .toggle {
     border-radius: 50%;
+    line-height: 25px;
 }
 
 .sun {
-    padding: 0 8px;
+    padding: 0 6px;
     background: #79797994;
     color: #fdfeff;
     display: none;
@@ -153,7 +154,7 @@ a {
 }
 
 .moon {
-    padding: 0 11px;
+    padding: 0 8px;
     background: #ececec;
     color: #696b6d;
     display: block;
@@ -171,12 +172,13 @@ a {
 .avatar {
     border: 1px solid #2929333d;
     border-radius: 50%;
-    max-width: 150px;
+    max-width: 125px;
+    max-height: 125px;
 }
 
 .intro {
     max-width: 750px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: normal;
     color: #000000d9;
 }
@@ -206,8 +208,8 @@ a {
 }
 
 .footer {
-    font-size: 16px;
-    min-height: 35px;
+    font-size: 12px;
+    min-height: 22px;
     color: #000000d9;
 }
 
@@ -266,7 +268,6 @@ a {
     align-items: center;
 }
 
-
 .close-button {
     position: absolute;
     top: 1px;
@@ -286,9 +287,9 @@ a {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 16px;
     font-weight: bolder;
-    margin-top: 20px;
+    margin: 5px 0;
 }
 
 .cover-img {
@@ -301,7 +302,8 @@ h1 {
     align-items: center;
     justify-content: space-between;
     color: #000;
-    font-size: 15px;
+    font-size: 11px;
+    flex-wrap: wrap;
 }
 
 .meta-box a {
@@ -346,11 +348,20 @@ blockquote {
     display: flex;
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    overflow: auto;
+}
+
+.tag {
+    border: 1px solid #666d7bf2;
+    margin: 2px;
+    border-radius: 5px;
+    min-width: fit-content;
 }
 
 .tag a {
     color: #1d1e1fab;
+    text-decoration: none;
+    padding: 0 5px;
 }
 
 .dark .tag a {
@@ -367,4 +378,126 @@ blockquote {
 .dark .message-404 {
     color: white;
     border-color: #a6a6a65c;
+}
+
+.blog-list ul {
+    padding-left: 12px;
+}
+
+.blog-entry {
+    font-size: 14px;
+}
+
+.blog-entry .publish-date {
+    display: block;
+    font-size: 12px;
+    border: 1px solid #585b5c;
+    padding: 0 5px;
+    margin: 5px;
+    border-radius: 5px;
+    width: fit-content;
+    line-height: 20px;
+}
+
+.blog-entry-title {
+    font-size: 20px;
+}
+
+.article h2 {
+    font-size: 16px;
+}
+
+blockquote {
+    margin: 0;
+    font-size: inherit;
+}
+
+@media screen and (min-width: 80rem) {
+    .nav {
+        font-size: 16px;
+    }
+
+    .nav-item {
+        margin: 0 50px;
+    }
+
+    .dark-mode {
+        font-size: 16px;
+    }
+
+    .dark-mode .toggle {
+        line-height: revert;
+    }
+
+    .sun {
+        padding: 0 8px;
+    }
+
+    .moon {
+        padding: 0 11px;
+    }
+
+    .avatar{
+        max-width: 150px;
+        max-height: 150px;
+    }
+    .intro {
+        font-size: 22px;
+    }
+
+    .footer {
+        font-size: 16px;
+        min-height: 35px;
+    }
+
+    .blog-list ul {
+        padding-left: revert;
+    }
+
+    .blog-entry {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .blog-entry .publish-date {
+        display: inline;
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+
+    .blog-entry-title {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 40px;
+        font-weight: bolder;
+        margin: revert;
+    }
+
+    .font-ubuntu {
+        font-size: 18px;
+        line-height: 32px;
+    }
+
+    .meta-box {
+        font-size: 15px;
+    }
+
+    .tags {
+        font-size: 14px;
+    }
+
+    .article h2 {
+        font-size: 27px;
+    }
+
+    .highlight {
+        font-size: 16px;
+    }
+
+    blockquote {
+        margin: 0 40px;
+        font-size: 16px;
+    }
 }

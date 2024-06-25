@@ -1,13 +1,13 @@
 {{ define "main" }}
 <main class="flex-1 mv-150">
-    <div>
-        <h2>{{ .Title }}</h2>
+    <div class="blog-list">
+        <h2 class="blog-entry-title">{{ .Title }}</h2>
         <ul>
             {{ $paginator := .Paginate .Pages }}
             {{ range $paginator.Pages }}
             <li class="blog-entry">
                 <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle }}</a>
-                <span>{{ .Date.Format "January 2006" }}</span>
+                <div class="publish-date">{{ .Date.Format "January 2006" }}</div>
             </li>
             {{ end }}
         </ul>
