@@ -412,6 +412,40 @@ blockquote {
     font-size: inherit;
 }
 
+.table-container{
+    width: 100%;
+    overflow: scroll;
+}
+
+.table-wrapper{
+    --table-border-color: #d3d3d3;
+    border: 1px solid var(--table-border-color);
+    border-radius: 10px;
+    padding: 10px;  
+    width: fit-content;
+}
+
+.dark .table-wrapper {
+    --table-border-color: #9b9b9b;
+}
+
+.table-wrapper table {
+    border-collapse: collapse;
+}
+
+.table-wrapper tr,  .table-wrapper th{
+    border-bottom: 1px solid var(--table-border-color);
+    white-space: nowrap;
+}
+
+.table-wrapper tr:last-child{
+    border-bottom: none;
+}
+
+.table-wrapper td, .table-wrapper th{
+    padding: 0px 5px;
+}
+
 @media screen and (min-width: 80rem) {
     .nav {
         font-size: 16px;
@@ -446,7 +480,7 @@ blockquote {
     }
 
     .footer {
-        font-size: 16px;
+        font-size: 15px;
         min-height: 35px;
     }
 
@@ -500,4 +534,9 @@ blockquote {
         margin: 0 40px;
         font-size: 16px;
     }
+
+    .table-wrapper td, .table-wrapper th{
+        padding: 0px 15px;
+    }
+
 }

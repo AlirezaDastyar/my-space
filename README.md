@@ -63,7 +63,17 @@ params:
     intro: |
         This field is for the home page intro in combination with author avatar
 ```
-
+## Styling
+### Table
+For css styling to be applied to the tables, the tables must be wrapped with `table` shortcode.  
+Example:
+```
+{{< table >}}
+| H1   | H1   | H3   |
+| ---- | ---- | ---- |
+| data | data | data |
+{{< /table >}}
+```
 ## Considerations
 ### Post cover image
 For theme to render the content correctly each post must have a cover image defined in front matter:
