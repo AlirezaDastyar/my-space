@@ -446,6 +446,21 @@ blockquote {
     padding: 0px 5px;
 }
 
+code:not(.highlight code){
+    background: #9aa0a626;
+    padding: 1px 3px;
+    border-radius: 5px;
+    margin: 0 1px;
+    color: #000000e8;
+    border: 1px solid #acb2bb87;
+}
+
+.dark code:not(.highlight code){
+    background: #5e759f3d;
+    color: #f7f7f7;
+    border: 1px solid #6a7d9b87;
+}
+
 @media screen and (min-width: 80rem) {
     .nav {
         font-size: 16px;
