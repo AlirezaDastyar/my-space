@@ -419,12 +419,17 @@ blockquote {
 }
 
 .category-link{  
-    background-color: #e8f3ff2e;
-    color: #fff;
+    background-color: #4a80bb2e;
+    color: #353537;
     padding: 0 10px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 13px;
+}
+
+.dark .category-link{  
+    background-color: #e8f3ff2e;
+    color: #fff;
 }
 
 .post-card-container{
