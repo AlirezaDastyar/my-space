@@ -1,16 +1,43 @@
 {{ define "main" }}
-<main class="flex-1 mv-150">
+<main class="">
     <div class="blog-list">
-        <h2 class="blog-entry-title">{{ .Title }}</h2>
+        {{ $child := index .Pages 0 }}
+        {{ if gt (len $child.Pages) 0 }}
         <ul>
             {{ $paginator := .Paginate .Pages }}
             {{ range $paginator.Pages }}
             <li class="blog-entry">
-                <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle }}</a>
+                <div class="category-meta">
+                    <h2 class="category-title">{{ .LinkTitle }}</h2>
+                    <a class="category-link" href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" > More+</a>
+                </div>
+                <ul class="post-card-container">
+                    {{ range first 3 .Pages }}
+                    <li class="post-card">
+                        <img class="small-cover-img" src="{{ .RelPermalink }}{{ .Params.cover.small }}" alt="{{ .Params.cover.alt }}" />
+                        <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle  | truncate 40 "..." }}</a>
+                        <div class="publish-date">{{ .Date.Format "January 2006" }}</div>
+                    </li>
+                    {{ end }}
+                </ul>
+            </li>
+            {{ end }}
+        </ul>
+        {{ else }}
+        <div class="category-meta">
+            <h2 class="category-title">{{ .LinkTitle }}</h2>
+        </div>
+        <ul class="post-card-container">
+            {{ $paginator := .Paginate  .Pages  }}
+            {{ range $paginator.Pages }}
+            <li class="post-card">
+                <img class="small-cover-img" src="{{ .RelPermalink }}{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" />
+                <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle  | truncate 40 "..." }}</a>
                 <div class="publish-date">{{ .Date.Format "January 2006" }}</div>
             </li>
             {{ end }}
         </ul>
+        {{ end }}
     </div>
     {{ template "_internal/pagination.html" . }}
 </main>

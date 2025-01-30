@@ -211,6 +211,7 @@ a {
     font-size: 12px;
     min-height: 22px;
     color: #000000d9;
+    margin-top: auto;
 }
 
 .dark .footer {
@@ -381,14 +382,63 @@ blockquote {
 }
 
 .blog-list ul {
-    padding-left: 12px;
+    list-style: none;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
 }
 
 .blog-entry {
     font-size: 14px;
 }
 
-.blog-entry .publish-date {
+.blog-entry-title {
+    font-size: 20px;
+}
+
+.category-meta{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #9796965e;
+    font-size: 18px;
+}
+
+.category-title{
+    display: inline;
+    padding: 2px 10px 2px 5px;
+    margin: 0;
+    font-size: 18px;
+}
+
+.category-link{  
+    background-color: #e8f3ff2e;
+    color: #fff;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.post-card-container{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.post-card{
+    flex: 0 0 calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 10px auto;
+    width: 95%;
+    font-size: 16px;
+}
+
+.post-card .publish-date {
     display: block;
     font-size: 12px;
     border: 1px solid #585b5c;
@@ -399,8 +449,9 @@ blockquote {
     line-height: 20px;
 }
 
-.blog-entry-title {
-    font-size: 20px;
+.small-cover-img {
+    max-width: 100%;
+    max-height: 70%;
 }
 
 .article h2 {
@@ -500,8 +551,15 @@ code:not(.highlight code){
         min-height: 35px;
     }
 
+    .blog-list{
+        margin-top: 100px;
+    }
+
     .blog-list ul {
         padding-left: revert;
+        flex-direction: row;
+        display: flex;
+        padding: 0;
     }
 
     .blog-entry {
@@ -509,7 +567,7 @@ code:not(.highlight code){
         padding: 5px 10px;
     }
 
-    .blog-entry .publish-date {
+    .post-card .publish-date {
         display: inline;
         font-size: 14px;
         padding: 5px 10px;
@@ -519,6 +577,18 @@ code:not(.highlight code){
         font-size: 24px;
     }
 
+    .post-card{
+        margin: 10px;
+    }
+
+    .category-title{
+        font-size: 21px;
+    }
+
+    .category-link{  
+        font-size: 15px;
+    }
+    
     h1 {
         font-size: 40px;
         font-weight: bolder;
