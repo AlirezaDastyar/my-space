@@ -287,6 +287,10 @@ a {
     color: #f00;
 }
 
+.list-container{
+    width: 100%
+}
+
 h1 {
     font-size: 16px;
     font-weight: bolder;
@@ -391,6 +395,7 @@ blockquote {
 
 .blog-entry {
     font-size: 14px;
+    width: 100%;
 }
 
 .blog-entry-title {
