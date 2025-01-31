@@ -21,6 +21,8 @@ pluralizeListTitles: false
 theme: my-space
 paginate: 9
 
+title: Blog's title
+
 taxonomies:
   tag: tags
 
