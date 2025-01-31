@@ -5,7 +5,7 @@ My space is a clean, minimalistic hugo theme.
 The design is inspired by [june theme](https://github.com/clavinjune/hugo-june-theme)
 
 > [!WARNING] 
-> This theme might drastically change, it's recommended to fork it for use.
+> This theme has no commitment to preserve backward compatibility and with each new commit it might break your blog, **It's recommended to fork it and use the fork.**
 
 ## Usage
 
@@ -19,7 +19,7 @@ baseURL: https://my-blog.com/
 languageCode: en
 pluralizeListTitles: false
 theme: my-space
-paginate: 10
+paginate: 9
 
 taxonomies:
   tag: tags
@@ -30,6 +30,8 @@ markup:
       attribute:
         block: true
         title: true
+    renderer:
+      unsafe: true
   highlight:
     noClasses: false  
     lineNos: true
@@ -82,6 +84,7 @@ For theme to render the content correctly each post must have a cover image defi
 params:
     cover: 
         image: img/cover.jpg
+        small: img/cover-small.jpg # used for post preview
         alt: a description for the image
 ---
 ```
@@ -116,5 +119,5 @@ params:
     category: my-category
 ---
 ```
-> [!NOTE]
-> Using category is not required, in case of using this is the compatible way.
+> [!WARNING]
+> Using category is required, for theme to render correctly
