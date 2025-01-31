@@ -8,7 +8,10 @@
             {{ range $paginator.Pages }}
             <li class="blog-entry">
                 <div class="category-meta">
-                    <h2 class="category-title">{{ .LinkTitle }}</h2>
+                    <div>
+                        <h2 class="category-title">{{ .LinkTitle }}</h2>
+                        <a class="rss-link" href="{{ .RelPermalink }}index.xml" title="RSS feed link" aria-label="RSS" ><i class="fa-solid fa-square-rss"></i></a>
+                    </div>
                     <a class="category-link" href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" > More+</a>
                 </div>
                 <ul class="post-card-container">
@@ -25,7 +28,10 @@
         </ul>
         {{ else }}
         <div class="category-meta">
-            <h2 class="category-title">{{ .LinkTitle }}</h2>
+            <div>
+                <h2 class="category-title">{{ .LinkTitle }}</h2>
+                <a class="rss-link" href="{{ .RelPermalink }}index.xml" title="RSS feed link" aria-label="RSS" ><i class="fa-solid fa-square-rss"></i></a>
+            </div>
         </div>
         <ul class="post-card-container">
             {{ $paginator := .Paginate  .Pages  }}
