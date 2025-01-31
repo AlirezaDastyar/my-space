@@ -17,8 +17,10 @@
                 <ul class="post-card-container">
                     {{ range first 3 .Pages }}
                     <li class="post-card">
-                        <img class="small-cover-img" src="{{ .RelPermalink }}{{ .Params.cover.small }}" alt="{{ .Params.cover.alt }}" />
-                        <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle  | truncate 40 "..." }}</a>
+                        <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >
+                            <img class="small-cover-img" src="{{ .RelPermalink }}{{ .Params.cover.small }}" alt="{{ .Params.cover.alt }}" />
+                            <h3 class="title">{{ .LinkTitle  | truncate 40 "..." }}</h3>
+                        </a>
                         <div class="publish-date">{{ .Date.Format "January 2006" }}</div>
                     </li>
                     {{ end }}
@@ -37,8 +39,10 @@
             {{ $paginator := .Paginate  .Pages  }}
             {{ range $paginator.Pages }}
             <li class="post-card">
-                <img class="small-cover-img" src="{{ .RelPermalink }}{{ .Params.cover.image }}" alt="{{ .Params.cover.alt }}" />
-                <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >{{ .LinkTitle  | truncate 40 "..." }}</a>
+                <a href="{{ .RelPermalink }}"  title="{{ .LinkTitle }}" aria-label="{{ .LinkTitle }}" >
+                    <img class="small-cover-img" src="{{ .RelPermalink }}{{ .Params.cover.small }}" alt="{{ .Params.cover.alt }}" />
+                    <h3 class="title">{{ .LinkTitle  | truncate 40 "..." }}</h3>
+                </a>
                 <div class="publish-date">{{ .Date.Format "January 2006" }}</div>
             </li>
             {{ end }}

@@ -453,6 +453,17 @@ blockquote {
     font-size: 16px;
 }
 
+.post-card a{
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.post-card .title{
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal
+}
+
 .post-card .publish-date {
     display: block;
     font-size: 12px;
@@ -466,7 +477,6 @@ blockquote {
 
 .small-cover-img {
     max-width: 100%;
-    max-height: 70%;
 }
 
 .article h2 {
