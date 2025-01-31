@@ -419,8 +419,16 @@ blockquote {
 }
 
 .rss-link{
-    color: #ee945e;
+    color: #4e5257;
     font-size: 20px;
+}
+
+.dark .rss-link{
+    color: inherit;
+}
+
+.rss-link:hover{
+    color: #ff9436;
 }
 
 .category-link{  
