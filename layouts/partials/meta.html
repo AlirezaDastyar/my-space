@@ -6,9 +6,9 @@
 {{- $desc = .Site.Params.description }}
 {{- $keywords = .Site.Params.Keywords }}
 {{- end }}
-{{- $main_css := resources.Get "css/main.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
-{{- $syntax_dark_css := resources.Get "css/syntax_dark.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
-{{- $syntax_light_css := resources.Get "css/syntax_light.css" | resources.ToCSS | resources.Minify  | resources.Fingerprint}}
+{{- $main_css := resources.Get "css/main.css" | css.Sass | resources.Minify  | resources.Fingerprint}}
+{{- $syntax_dark_css := resources.Get "css/syntax_dark.css" | css.Sass | resources.Minify  | resources.Fingerprint}}
+{{- $syntax_light_css := resources.Get "css/syntax_light.css" | css.Sass | resources.Minify  | resources.Fingerprint}}
 {{- $main_js := resources.Get "js/main.js" | minify }}
 <meta charset="UTF-8">
 <link rel="icon" href="/img/favicon.png" />

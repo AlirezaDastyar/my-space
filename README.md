@@ -19,7 +19,8 @@ baseURL: https://my-blog.com/
 languageCode: en
 pluralizeListTitles: false
 theme: my-space
-paginate: 9
+pagination:
+  pagerSize: 9
 
 title: Blog's title
 
