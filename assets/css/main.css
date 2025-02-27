@@ -7,9 +7,26 @@
     /* license at /fonts/roboto//LICENSE.txt */
 }
 
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/ubuntu/font.woff2') format('woff2');
+    /* license at /fonts/ubuntu//LICENSE.txt */
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/ubuntu/font-700.woff2') format('woff2');
+    /* license at /fonts/ubuntu//LICENSE.txt */
+}
+
 ::selection {
     color: #ec5f5f;
-
 }
 
 a {
@@ -69,7 +86,7 @@ a {
 }
 
 .font-ubuntu {
-    font-family: "ubuntu";
+    font-family: "Ubuntu", sans-serif;
     font-size: 14px;
     line-height: 24px;
 }
@@ -498,7 +515,7 @@ blockquote {
 
 .table-container{
     width: 100%;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .table-wrapper{
